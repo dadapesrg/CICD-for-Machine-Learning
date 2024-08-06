@@ -16,3 +16,9 @@ eval:
     echo '![Confusion Matrix](./Results/model_results.png)' >> report.md
    
     cml comment create report.md
+
+        - name: Update Branch
+        env:
+          NAME: ${{ secrets.USER_NAME }}
+          EMAIL: ${{ secrets.USER_EMAIL }}
+        run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
