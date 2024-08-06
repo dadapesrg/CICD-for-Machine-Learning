@@ -62,4 +62,4 @@ plt.savefig("Results/model_results.png", dpi=120)
 sio.dump(pipe, "Model/drug_pipeline.skops")
 
 #Load the model
-#sio.load("Model/drug_pipeline.skops", trusted=True)
+sio.load("Model/drug_pipeline.skops", trusted=True)
