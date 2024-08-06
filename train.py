@@ -14,17 +14,20 @@ from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix
 
 import skops.io as sio
 
+#Read the data into the dataframe
 drug_df = pd.read_csv("Data/drug200.csv")
 drug_df = drug_df.sample(frac=1)
 print(drug_df.head(3))
 
+#Extract the features and target data from the dataframe
 X = drug_df.drop("Drug", axis=1).values
 y = drug_df.Drug.values
 
+#Split data into training and test data
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=125
 )
-
+#Categorical and numerical data columns 
 cat_col = [1,2,3]
 num_col = [0,4]
 
